@@ -9,6 +9,7 @@
   --bg-violet: hsl(273, 75%, 66%);
   --bg-blue: hsl(240, 73%, 65%);
   --divider: hsl(240, 5%, 91%);
+  -text: 1.2rem;
 }
 
 html {
@@ -25,6 +26,14 @@ body {
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  color: var(--regular-gray-text);
+}
+
 .main-container {
   width: 92rem;
   height: 51rem;
@@ -33,32 +42,87 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 2.5rem;
+  box-shadow: 0 15px 25px rgb(50, 10, 85);
+  display: flex;
 }
 
 .images {
-  height: 100%;
+  flex: 1 1 30rem;
   position: relative;
   overflow: hidden;
 }
 
-.bg-pattern {
+.images img {
   position: absolute;
-  top: -55%;
-  left: -60%;
 }
 
-.woman {
-  position: absolute;
-  top: 8rem;
-  left: -8rem;
+#bg-pattern {
+  top: -58%;
+  right: 2rem;
 }
 
-.box {
-  position: absolute;
-  top: 43%;
-  left: -9.5rem;
+#woman {
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%);
 }
 
+.faq {
+  flex: 1 1 40rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+.faq h1 {
+  color: var(--primary-dark-text);
+  flex: 1 1 10rem;
+  display: flex;
+  align-items: flex-end;
+  font-size: 3rem;
+  margin-top: 2.5rem;
+}
+
+.faq ul {
+  flex: 1 1 50rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  width: 80%;
+  height: 100%;
+}
+
+.faq li {
+  border-bottom: 1px solid var(--divider);
+  font-size: 1.4rem;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.question {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.question::after {
+  content: url('./images/icon-arrow-down.svg');
+  position: absolute;
+  right: 0;
+}
+
+.question:hover {
+  color: var(--primary-red-text);
+}
+
+.answer {
+  color: var(--sub-gray-text);
+  font-size: 1.3rem;
+  display: none;
+  padding-bottom: 1rem;
+}
 
 .attribution {
   font-size: 11px;
